@@ -3,7 +3,7 @@ A collection of map related tools
 '''
 import sys
 import numpy as np
-from modules.map.proto import map_pb2
+from modules.common_msgs.map_msgs import map_pb2
 from shapely.geometry import Point, Polygon, LineString
 
 

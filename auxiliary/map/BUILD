@@ -6,6 +6,6 @@ py_binary(
     name = "map_tools",
     srcs = ["map_tools.py"],
     deps = [
-        "//modules/map/proto:map_py_pb2",
+        "//modules/common_msgs/map_msgs:map_py_pb2",
     ],
 )
