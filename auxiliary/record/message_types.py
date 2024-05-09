@@ -15,7 +15,7 @@ import modules.perception.proto.traffic_light_detection_pb2 as traffic_light_det
 # sys.path.insert(1, '/apollo/py_proto/modules/prediction/proto')
 import modules.prediction.proto.prediction_obstacle_pb2 as prediction_obstacle_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/routing/proto')
-import modules.routing.proto.routing_pb2 as routing_pb2
+import modules.common_msgs.routing_msgs.routing_pb2 as routing_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/planning/proto')
 import modules.planning.proto.planning_pb2 as planning_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/perception/proto')

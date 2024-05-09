@@ -9,7 +9,7 @@ import argparse
 
 from cyber.python.cyber_py3 import cyber
 from cyber.python.cyber_py3 import cyber_time
-from modules.routing.proto.routing_pb2 import RoutingRequest
+from modules.common_msgs.routing_msgs.routing_pb2 import RoutingRequest
 
 
 class CyberShutdown(Exception):

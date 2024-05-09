@@ -13,7 +13,7 @@ py_library(
         "//modules/perception/proto:traffic_light_detection_py_pb2",
         "//modules/prediction/proto:prediction_obstacle_py_pb2",
         "//modules/perception/proto:perception_obstacle_py_pb2",
-        "//modules/routing/proto:routing_py_pb2",
+        "//modules/common_msgs/routing_msgs:routing_py_pb2",
         "//modules/planning/proto:planning_py_pb2",
         "//modules/storytelling/proto:story_py_pb2",
         "//cyber/python/cyber_py3:record",
