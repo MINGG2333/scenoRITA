@@ -11,17 +11,17 @@ import modules.common_msgs.localization_msgs.localization_pb2 as localization_pb
 import modules.common_msgs.localization_msgs.imu_pb2 as imu_pb2
 import modules.common_msgs.localization_msgs.gps_pb2 as gps_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/perception_msgs')
-import modules.perception.proto.traffic_light_detection_pb2 as traffic_light_detection_pb2
+import modules.common_msgs.perception_msgs.traffic_light_detection_pb2 as traffic_light_detection_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/prediction_msgs')
-import modules.prediction.proto.prediction_obstacle_pb2 as prediction_obstacle_pb2
+import modules.common_msgs.prediction_msgs.prediction_obstacle_pb2 as prediction_obstacle_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/routing/proto')
 import modules.common_msgs.routing_msgs.routing_pb2 as routing_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/planning_msgs')
-import modules.planning.proto.planning_pb2 as planning_pb2
+import modules.common_msgs.planning_msgs.planning_pb2 as planning_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/perception_msgs')
-import modules.perception.proto.perception_obstacle_pb2 as perception_obstacle_pb2
+import modules.common_msgs.perception_msgs.perception_obstacle_pb2 as perception_obstacle_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/storytelling_msgs')
-import modules.storytelling.proto.story_pb2 as story_pb2
+import modules.common_msgs.storytelling_msgs.story_pb2 as story_pb2
 
 # define the mapping from message data type to class name
 # supports messages from only the following:
