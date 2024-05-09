@@ -40,7 +40,15 @@ scenoRITA's structure in a nutshell:
 * Any linux distributions, preferably Ubuntu 18.04.5 LTS (Bionic Beaver)
 * Apollo [prerequisites](https://github.com/UCI-SORA-LAB/apollo#prerequisites)
 * Python3
-* We made some changes to Apollo 6.0 to enable scenoRITA to run. Clone a copy of the modified version of Apollo found [here](https://github.com/UCI-SORA-LAB/apollo)
+* We made some changes to Apollo 6.0 to enable scenoRITA to run. Clone a copy of the modified version of Apollo found [here](https://github.com/UCI-SORA-LAB/apollo), or following these:
+'''
+scenoRITA_repo="git@github.com:MINGG2333/scenoRITA.git"
+git clone $scenoRITA_repo automation
+
+cd automation/for_apollo
+cp -rf for_apollo/apollo/modules/* /apollo/modules/
+echo "--server_ports=5555" >> /apollo/modules/common/data/global_flagfile.txt
+'''
 * Follow the instructions found [here](https://github.com/UCI-SORA-LAB/apollo/tree/automation/docs/demo_guide) to start and build apollo.
 * Inside the Apollo docker, run the following script to clone scenoRITA and install all its dependencies:
 ```
