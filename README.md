@@ -45,7 +45,7 @@ scenoRITA's structure in a nutshell:
 scenoRITA_repo="https://github.com/MINGG2333/scenoRITA.git"
 git clone $scenoRITA_repo automation
 
-cd automation/for_apollo
+cd automation
 cp -rf for_apollo/apollo/modules/* /apollo/modules/
 echo "--server_ports=5555" >> /apollo/modules/common/data/global_flagfile.txt
 ```
