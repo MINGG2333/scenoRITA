@@ -309,4 +309,3 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     perception_publisher(args.channel, args.files, args.period)
-    
