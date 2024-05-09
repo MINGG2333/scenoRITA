@@ -23,16 +23,15 @@ on json configurations
 
 import argparse
 import math
-from threading import Timer
 import time
 
 import simplejson
 
 from cyber.python.cyber_py3 import cyber
 from cyber.python.cyber_py3 import cyber_time
-from modules.common.proto.geometry_pb2 import Point3D
-from modules.perception.proto.perception_obstacle_pb2 import PerceptionObstacle
-from modules.perception.proto.perception_obstacle_pb2 import PerceptionObstacles
+from modules.common_msgs.basic_msgs.geometry_pb2 import Point3D
+from modules.common_msgs.perception_msgs.perception_obstacle_pb2 import PerceptionObstacle
+from modules.common_msgs.perception_msgs.perception_obstacle_pb2 import PerceptionObstacles
 
 
 _s_seq_num = 0
@@ -101,8 +100,7 @@ def load_descrptions(files):
                     trace = obstacle.get('trace', [])
                     for i in range(1, len(trace)):
                         if same_point(trace[i], trace[i - 1]):
-                            print('same trace point found in obstacle: %s' %
-                                  obstacle["id"])
+                            print('same trace point found in obstacle: %s' % obstacle["id"])
                             return None
                     objects.append(obstacle)
             else:  # Default case. handles only one obstacle
@@ -110,8 +108,7 @@ def load_descrptions(files):
                 trace = obstacle.get('trace', [])
                 for i in range(1, len(trace)):
                     if same_point(trace[i], trace[i - 1]):
-                        print('same trace point found in obstacle: %s' %
-                              obstacle["id"])
+                        print('same trace point found in obstacle: %s' % obstacle["id"])
                         return None
                 objects.append(obstacle)
 
@@ -283,8 +280,9 @@ def perception_publisher(perception_channel, files, period):
     start_time = time.time()
 
     perception_description = load_descrptions(files)
-    sleep_time = 1.0 / period  #Hz
+    sleep_time = 1.0 / period  # Hz
     global _s_delta_t
+    # _s_delta_t = period
     perception = None
     while not cyber.is_shutdown():
         perception = generate_perception(perception_description, perception)
@@ -311,3 +309,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     perception_publisher(args.channel, args.files, args.period)
+    
