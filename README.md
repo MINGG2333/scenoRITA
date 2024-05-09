@@ -51,13 +51,19 @@ echo "--server_ports=5555" >> /apollo/modules/common/data/global_flagfile.txt
 ```
 * Follow the instructions found [here](https://github.com/UCI-SORA-LAB/apollo/tree/automation/docs/demo_guide) to start and build apollo.
 * Inside the Apollo docker, run the following script to clone scenoRITA and install all its dependencies:
-```
+```sh
+cd /apollo/automation/for_apollo
+chmod +x scenoRITA.sh
 ./scenoRITA.sh
+source ~/.bashrc
 ```
 * Run the following commands to start dreamview and the needed modules:
-```
-bash /apollo/scripts/bootstrap.sh start
-bash /apollo/automation/auxiliary/modules/start_modules.sh
+```sh
+cd /apollo
+./scripts/bootstrap.sh stop
+./scripts/bootstrap.sh # monitor & dreamview
+
+bash /apollo/automation/auxiliary/modules/start_modules.sh # planning & prediction & routing
 source /apollo/cyber/setup.bash
 ```
 
