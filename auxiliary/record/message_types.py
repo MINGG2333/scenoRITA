@@ -4,23 +4,23 @@ import time
 import sys
 import os
 
-# sys.path.insert(1, '/apollo/py_proto/modules/canbus/proto')
-import modules.canbus.proto.chassis_pb2 as chassis_pb2
-# sys.path.insert(1, '/apollo/py_proto/modules/localization/proto')
-import modules.localization.proto.localization_pb2 as localization_pb2
-import modules.localization.proto.imu_pb2 as imu_pb2
-import modules.localization.proto.gps_pb2 as gps_pb2
-# sys.path.insert(1, '/apollo/py_proto/modules/perception/proto')
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/chassis_msgs')
+import modules.common_msgs.chassis_msgs.chassis_pb2 as chassis_pb2
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/localization_msgs')
+import modules.common_msgs.localization_msgs.localization_pb2 as localization_pb2
+import modules.common_msgs.localization_msgs.imu_pb2 as imu_pb2
+import modules.common_msgs.localization_msgs.gps_pb2 as gps_pb2
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/perception_msgs')
 import modules.perception.proto.traffic_light_detection_pb2 as traffic_light_detection_pb2
-# sys.path.insert(1, '/apollo/py_proto/modules/prediction/proto')
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/prediction_msgs')
 import modules.prediction.proto.prediction_obstacle_pb2 as prediction_obstacle_pb2
 # sys.path.insert(1, '/apollo/py_proto/modules/routing/proto')
 import modules.common_msgs.routing_msgs.routing_pb2 as routing_pb2
-# sys.path.insert(1, '/apollo/py_proto/modules/planning/proto')
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/planning_msgs')
 import modules.planning.proto.planning_pb2 as planning_pb2
-# sys.path.insert(1, '/apollo/py_proto/modules/perception/proto')
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/perception_msgs')
 import modules.perception.proto.perception_obstacle_pb2 as perception_obstacle_pb2
-# sys.path.insert(1, '/apollo/py_proto/modules/storytelling/proto')
+# sys.path.insert(1, '/apollo/py_proto/modules/common_msgs/storytelling_msgs')
 import modules.storytelling.proto.story_pb2 as story_pb2
 
 # define the mapping from message data type to class name
