@@ -47,7 +47,8 @@ git clone $scenoRITA_repo automation
 
 cd automation
 cp -rf for_apollo/apollo/modules/* /apollo/modules/
-echo "--server_ports=5555" >> /apollo/modules/common/data/global_flagfile.txt
+chmod +x /apollo/modules/tools/perception/sunnyvale_loop_perception.bash
+# echo "--server_ports=5555" >> /apollo/modules/common/data/global_flagfile.txt
 ```
 * Follow the instructions found [here](https://github.com/UCI-SORA-LAB/apollo/tree/automation/docs/demo_guide) to start and build apollo.
 * Inside the Apollo docker, run the following script to clone scenoRITA and install all its dependencies:
@@ -63,6 +64,7 @@ cd /apollo
 ./scripts/bootstrap.sh stop
 ./scripts/bootstrap.sh # monitor & dreamview
 
+# TODO: cmd for Sim Control & Lincoln2017MKZ_LGSVL & sunnyvale_loop
 bash /apollo/automation/auxiliary/modules/start_modules.sh # planning & prediction & routing
 source /apollo/cyber/setup.bash
 ```
@@ -70,11 +72,14 @@ source /apollo/cyber/setup.bash
 ## Using scenoRITA: ##
 * To run scenoRITA from end-to-end, change directory to `scenario_generator`:
 ``` 
-cd scenario_generator/
+cd /apollo/automation/scenario_generator/
 ```
 * Modify `scenoRITA_mut.py` (e.g., No. of generations, domain specific constraints etc). Then run the framework using the following command:
-``` 
+``` sh
 bazel run scenoRITA_mut 
+# see results in:
+# temp_record/Generation*_Scenario*
+# scenario_generator/*.csv
 ```
 
 ## How to cite scenoRITA: ##

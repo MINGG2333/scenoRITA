@@ -125,7 +125,7 @@ def runScenario(deme,record_name):
         p2=list(ptl_dict.keys())[p_index2]
         adc_routing=p1.replace('-',',')+","+p2.replace('-',',')
         # ------- running the scneario -------
-        scenario_player_cmd='bazel run --experimental_ui_limit_console_output=1 //automation/scenario_player:run_automation -- -rv '+adc_routing+' -o '+record_name
+        scenario_player_cmd='bazel run --ui_event_filters=-INFO //automation/scenario_player:run_automation -- -rv '+adc_routing+' -o '+record_name
         scenario_player_output = subprocess.check_output(scenario_player_cmd, shell=True)
         scenario_player_output=str(scenario_player_output)[2:-3]
         num_runs=num_runs+1
@@ -172,11 +172,11 @@ def main():
     toolbox.register("mutate", tools.mutUniformInt, low=(0,0,0,-3,1,1,1,1,0), up=(30000,len(ptl_dict.keys())-1,len(ptl_dict.keys())-1,3,15,3,5,20,2), indpb=0.05)
     toolbox.register("select", tools.selNSGA2)
 
-    NP=50
+    NP=6
     OBS_MAX=15
     OBS_MIN=3
-    TOTAL_LANES=60
-    ETIME=43200 # execution time end (in seconds) after 12 hours 
+    TOTAL_LANES=3
+    ETIME=432 # execution time end (in seconds) after 12 hours 
     GLOBAL_LANE_COVERAGE=set()
     DEME_SIZES = [random.randint(OBS_MIN,OBS_MAX) for p in range(0,NP)]
     CXPB, MUTPB, ADDPB, DELPB = 0.8, 0.2, 0.1, 0.1
